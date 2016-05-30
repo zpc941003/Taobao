@@ -106,15 +106,6 @@
         android:textColor="#999999"
         android:textSize="12sp" />
 
-    <TextView
-        android:id="@+id/info_shopname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/info_title"
-        android:layout_below="@+id/info_postage"
-        android:layout_marginTop="44dp"
-        android:text="TextView" />
-
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="fill_parent"
@@ -157,5 +148,23 @@
             android:text="查看收藏夹"
             android:textColor="#ffffff" />
     </LinearLayout>
+
+    <com.android.volley.toolbox.NetworkImageView
+        android:id="@+id/info_shoplogo"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@+id/info_shopname"
+        android:layout_alignLeft="@+id/info_postage"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/info_shopname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView2"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/info_shoplogo"
+        android:text="TextView" />
 
 </RelativeLayout>

@@ -25,8 +25,8 @@ public class InfoActivity extends Activity implements OnClickListener {
 	private TextView title, price, extraprice, postage, sellcount, from,
 			shopname;
 	private Button btnBuy, btnStore, btnShowStore;
-	private NetworkImageView imageview;
-	private static String item_id, url;
+	private NetworkImageView imageview,shoplogo;
+	private static String item_id, url,logourl;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +52,7 @@ public class InfoActivity extends Activity implements OnClickListener {
 		btnStore = (Button) findViewById(R.id.btnstore);
 		btnShowStore = (Button) findViewById(R.id.btnshowstore);
 		imageview = (NetworkImageView) findViewById(R.id.imageView1);
+		shoplogo = (NetworkImageView) findViewById(R.id.info_shoplogo);
 		btnBuy.setOnClickListener(this);
 		btnStore.setOnClickListener(this);
 		btnShowStore.setOnClickListener(this);
@@ -89,6 +90,7 @@ public class InfoActivity extends Activity implements OnClickListener {
 							InfoActivity.url = imagearr.getString(0);
 							JSONObject seller = data.getJSONObject("seller");
 							String shopnamestr = seller.getString("shopName");
+							InfoActivity.logourl=seller.getString("shopIcon");
 							shopname.setText(shopnamestr);
 							JSONObject item = value1.getJSONObject("item");
 							String sellcountstr = item.getString("sellCount");
@@ -114,6 +116,9 @@ public class InfoActivity extends Activity implements OnClickListener {
 						ImageLoader loader = new ImageLoader(MyApplication
 								.getHttpQueues(), new BitmapCache());
 						imageview.setImageUrl(InfoActivity.url, loader);
+//						ImageLoader loader1 = new ImageLoader(MyApplication
+//								.getHttpQueues(), new BitmapCache());
+						shoplogo.setImageUrl(InfoActivity.logourl, loader);
 					}
 
 					@Override
