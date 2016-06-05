@@ -116,8 +116,6 @@ public class InfoActivity extends Activity implements OnClickListener {
 						ImageLoader loader = new ImageLoader(MyApplication
 								.getHttpQueues(), new BitmapCache());
 						imageview.setImageUrl(InfoActivity.url, loader);
-//						ImageLoader loader1 = new ImageLoader(MyApplication
-//								.getHttpQueues(), new BitmapCache());
 						shoplogo.setImageUrl(InfoActivity.logourl, loader);
 					}
 
@@ -141,7 +139,7 @@ public class InfoActivity extends Activity implements OnClickListener {
 			startActivity(it);
 			break;
 		case R.id.btnstore:
-			dataStore();
+			dataStore();//ÃÌº”µΩ ’≤ÿº–
 			break;
 		case R.id.btnshowstore:
 			Intent intent = new Intent(InfoActivity.this, StoreActivity.class);
